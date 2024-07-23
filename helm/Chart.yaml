@@ -1,5 +1,5 @@
 # helm/Chart.yaml
 apiVersion: v2
-name: demo-app
-description: A Helm chart for this demo-app
+name: demoApp
+description: A Helm chart for this demoApp
 version: 0.1.0
