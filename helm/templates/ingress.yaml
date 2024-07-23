@@ -1,0 +1,20 @@
+# helm/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-app
+  namespace: demo-app
+spec:
+  ingressClassName: cloudflare-tunnel
+  rules:
+  - host: {{ .Values.demoApp.externalUrl }}
+    http:
+      paths:
+      - backend:
+          service:
+            name: {{ .Release.Name }}-demoApp
+            port:
+              number: {{ .Values.demoApp.port }}
+        path: /
+        pathType: Prefix
+

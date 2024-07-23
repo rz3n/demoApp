@@ -1,0 +1,13 @@
+# helm/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-demoApp
+spec:
+  selector:
+    app: {{ .Release.Name }}-demoApp
+  ports:
+    - protocol: TCP
+      port: {{ .Values.demoApp.port }}
+      targetPort: {{ .Values.demoApp.port }}
+  type: NodePort

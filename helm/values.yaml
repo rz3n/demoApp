@@ -1,0 +1,8 @@
+# helm/values.yaml
+demoApp:
+  image: ghcr.io/rz3n/demo-app:1.0
+  replicas: 2
+  port: 8000
+  imagePullPolicy: Always
+  externalUrl: demoapp.mydomain.com
+

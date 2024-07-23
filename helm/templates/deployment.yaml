@@ -1,0 +1,23 @@
+# helm/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ .Release.Name }}-demoApp
+  name: {{ .Release.Name }}-demoApp
+spec:
+  replicas: {{ .Values.demoApp.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-demoApp
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-demoApp
+    spec:
+      containers:
+      - image: {{ .Values.demoApp.image }}
+        name: demo-app
+        ports:
+        - containerPort: {{ .Values.demoApp.port }}
+        imagePullPolicy: {{ .Values.demoApp.imagePullPolicy }}
