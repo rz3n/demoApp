@@ -2,10 +2,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}-demoApp
+  name: {{ .Release.Name }}-demoapp
 spec:
   selector:
-    app: {{ .Release.Name }}-demoApp
+    app: {{ .Release.Name }}-demoapp
   ports:
     - protocol: TCP
       port: {{ .Values.demoApp.port }}

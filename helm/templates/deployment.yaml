@@ -3,17 +3,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: {{ .Release.Name }}-demoApp
-  name: {{ .Release.Name }}-demoApp
+    app: {{ .Release.Name }}-demoapp
+  name: {{ .Release.Name }}-demoapp
 spec:
   replicas: {{ .Values.demoApp.replicas }}
   selector:
     matchLabels:
-      app: {{ .Release.Name }}-demoApp
+      app: {{ .Release.Name }}-demoapp
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}-demoApp
+        app: {{ .Release.Name }}-demoapp
     spec:
       containers:
       - image: {{ .Values.demoApp.image }}

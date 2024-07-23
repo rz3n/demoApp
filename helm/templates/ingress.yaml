@@ -2,8 +2,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: demoApp
-  namespace: demoApp
+  name: demoapp
+  namespace: demoapp
 spec:
   ingressClassName: cloudflare-tunnel
   rules:
@@ -12,7 +12,7 @@ spec:
       paths:
       - backend:
           service:
-            name: {{ .Release.Name }}-demoApp
+            name: {{ .Release.Name }}-demoapp
             port:
               number: {{ .Values.demoApp.port }}
         path: /
